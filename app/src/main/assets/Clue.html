@@ -111,11 +111,17 @@
 
 				// 2. Underneath that, provide a textbox prompting for the user’s name with a Submit button. When the user’s enters her/his name, replace the form with a dynamic message saying “Welcome <name>”.
 				// 3. Display the set of “cards” the human user “holds in her/his hand”.
-
-				username = document.getElementById("username").value;
+                //MAKE NEW FUNCTION THAT TAKES IN THE USER NAME AS THE PARAMETER AND USE IT HERE TO GET THE NEW USERNAME
+				//username = document.getElementById("username").value;
 				document.getElementById("form").innerHTML = "Welcome " + username + ",<br>You hold the cards: " + usersHand.join(", ");
 				constructGuessingDiv();
 				populateSelectOptions();
+			}
+
+			function getUserName(input)
+			{
+			    username = input;
+			    welcomeUser();
 			}
 
 			// 4. Display an HTML form that allows you to select 1 suspect, 1 weapon, and 1 room. I suggest you use a choice box for this but in fact it does not matter what you use as long as it is an HTML form.
@@ -226,7 +232,7 @@
 				usersTurn = true;
 				winner = "";
 				gameEndStatus = false;
-
+                cont.performClick("testing 123");
 				document.getElementById("form").innerHTML = "<input type='text' placeholder='Enter your name' id='username'><button type='button' onclick='welcomeUser()'>Submit</button>";
 			}
 
